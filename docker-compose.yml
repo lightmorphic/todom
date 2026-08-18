@@ -4,6 +4,6 @@ services:
     container_name: todom
     restart: unless-stopped
     ports:
-      - "4080:3000"
+      - "4070:3000"
     volumes:
       - /opt/todom:/data

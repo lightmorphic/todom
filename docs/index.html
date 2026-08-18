@@ -572,13 +572,13 @@ services:
     container_name: todom
     restart: unless-stopped
     ports:
-      - "4080:3000"
+      - "4070:3000"
     volumes:
       - /opt/todom:/data</div>
     <ol class="steps">
       <li><b>Create the data folder</b> — <code>sudo mkdir -p /opt/todom</code></li>
       <li><b>Start the container</b> — <code>docker compose up -d</code></li>
-      <li><b>Open it</b> — visit <code>http://your-server:4080</code> and add your first task</li>
+      <li><b>Open it</b> — visit <code>http://your-server:4070</code> and add your first task</li>
     </ol>
   </div>
 </section>

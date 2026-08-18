@@ -62,7 +62,7 @@ with the `DATA_FILE` environment variable, e.g.
    ```bash
    docker pull ghcr.io/lightmorphic/todom:latest
    sudo mkdir -p /opt/todom
-   docker run -p 4080:3000 -v /opt/todom:/data ghcr.io/lightmorphic/todom:latest
+   docker run -p 4070:3000 -v /opt/todom:/data ghcr.io/lightmorphic/todom:latest
    ```
 
 2. Or build locally
@@ -70,7 +70,7 @@ with the `DATA_FILE` environment variable, e.g.
    ```bash
    docker build -t todom .
    sudo mkdir -p /opt/todom
-   docker run -p 4080:3000 -v /opt/todom:/data todom
+   docker run -p 4070:3000 -v /opt/todom:/data todom
    ```
 
 3. Docker Compose
@@ -82,7 +82,7 @@ with the `DATA_FILE` environment variable, e.g.
        container_name: todom
        restart: unless-stopped
        ports:
-         - "4080:3000"
+         - "4070:3000"
        volumes:
          - /opt/todom:/data
    ```
@@ -101,7 +101,7 @@ with the `DATA_FILE` environment variable, e.g.
 > so the container can write to the mounted data folder. Without
 > this, the container will fail to create or update `tasks.json`.
 
-Open <http://localhost:4080>. Tasks are stored server-side in a JSON
+Open <http://localhost:4070>. Tasks are stored server-side in a JSON
 file inside `/opt/todom`, so every device that opens this URL sees
 the same task list.
 
