@@ -16,13 +16,13 @@ See [CHANGELOG.md](./CHANGELOG.md) for version history.
 
 ## Features
 
-- ✨ Clean, minimal interface
-- 🌓 Dark/Light mode with system preference detection
-- 📅 Every task has a due date; tasks are sorted nearest-due first
-- 🚦 Colour-coded urgency (overdue / due today / due soon / later)
-- ✅ Completion date recorded automatically when you check a task off
-- 📱 Installable PWA (works offline, "Add to Home Screen")
-- 🔄 Server-side storage - same task list on every device
+- Clean, minimal interface
+- Dark/Light mode with system preference detection
+- Every task has a due date; tasks are sorted nearest-due first
+- Colour-coded urgency (overdue / due today / due soon / later)
+- Completion date recorded automatically when you check a task off
+- Installable PWA (works offline, "Add to Home Screen")
+- Server-side storage - same task list on every device
 
 ## Storage
 
