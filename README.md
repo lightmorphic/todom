@@ -12,8 +12,6 @@ Todom is a small, dependency-free todo list. Every task has a due
 date, active tasks are sorted soonest-first, and completing a task
 records the completion date.
 
-> ⚠️ Vibe coded with [Claude](https://claude.ai).
-
 See [CHANGELOG.md](./CHANGELOG.md) for version history.
 
 ## Features
