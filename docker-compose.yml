@@ -1,0 +1,9 @@
+services:
+  todom:
+    image: ghcr.io/lightmorphic/todom:latest
+    container_name: todom
+    restart: unless-stopped
+    ports:
+      - "4080:3000"
+    volumes:
+      - /opt/todom:/data

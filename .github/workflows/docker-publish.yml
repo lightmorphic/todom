@@ -1,0 +1,42 @@
+name: Build and publish Docker image
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+  schedule:
+    # Weekly rebuild (Mondays 06:00 UTC) so the image keeps picking up
+    # patched OS packages (OpenSSL, etc.) even when no app code has
+    # changed. `apk upgrade` in the Dockerfile does the actual patching
+    # at build time; this just makes sure a build happens regularly.
+    - cron: '0 6 * * 1'
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set lowercase repo owner
+        run: echo "OWNER_LC=${GITHUB_REPOSITORY_OWNER,,}" >> "$GITHUB_ENV"
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: |
+            ghcr.io/${{ env.OWNER_LC }}/todom:latest
+            ghcr.io/${{ env.OWNER_LC }}/todom:${{ github.sha }}
