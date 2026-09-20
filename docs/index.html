@@ -80,7 +80,10 @@
   a { color: var(--blue); }
   a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
-  .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+  /* The page shell. Wide enough to feel like a full-width site; the text
+     and the demo keep their own narrower caps so nothing reads as a
+     stretched line. */
+  .wrap { max-width: 1184px; margin: 0 auto; padding: 0 32px; }
   section, header.hero { padding: 88px 0; position: relative; }
 
   .rule {
@@ -144,6 +147,9 @@
 
   /* ---------- Live demo: faithful mini-recreation of the real app ---------- */
   .demo-frame {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
     background: rgba(255,255,255,0.03);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -353,7 +359,7 @@
     color: var(--ink);
   }
 
-  section p { color: var(--ink-soft); margin: 0 0 14px; max-width: 58ch; }
+  section p { color: var(--ink-soft); margin: 0 0 14px; max-width: 62ch; }
   section p:last-child { margin-bottom: 0; }
   section p strong { color: var(--ink); font-weight: 600; }
 
@@ -408,12 +414,13 @@
     border-radius: 12px;
     overflow-x: auto;
     margin: 24px 0;
+    max-width: 760px;
     white-space: pre;
     backdrop-filter: blur(10px);
   }
   .code-block .cm { color: var(--ink-faint); }
 
-  .steps { list-style: none; counter-reset: step; margin: 28px 0 0; padding: 0; }
+  .steps { list-style: none; counter-reset: step; margin: 28px 0 0; padding: 0; max-width: 760px; }
   .steps li {
     counter-increment: step;
     position: relative;
