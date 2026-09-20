@@ -1,0 +1,84 @@
+/* Shared styling for Todom's legal pages. Same dark palette as the
+   home page; no light variant. */
+@font-face {
+  font-family: 'Inter';
+  src: url(fonts/inter-var.woff2) format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+  --bg: #0B0E14;
+  --bg-2: #0F1320;
+  --ink: #F2F4F8;
+  --ink-soft: #9AA4B7;
+  --ink-faint: #626D80;
+  --line: rgba(242,244,248,0.09);
+  --blue: #2196F3;
+  --yellow: #FBC02D;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --transition: 180ms cubic-bezier(.4,0,.2,1);
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--blue); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+.skip { position: absolute; left: -9999px; top: 0; background: var(--bg-2); color: var(--ink); padding: 10px 16px; border-radius: 8px; z-index: 100; }
+.skip:focus { left: 16px; top: 8px; }
+
+/* ---------- Sticky top bar ---------- */
+/* Stays put while the page scrolls, so the links and the app launcher
+   are always a click away. */
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(11,14,20,0.82);
+  backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+@supports not (backdrop-filter: blur(1px)) { .topbar { background: var(--bg); } }
+.topbar .wrap { display: flex; align-items: center; gap: 16px; padding-top: 10px; padding-bottom: 10px; }
+.topbar .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); text-decoration: none; font-weight: 700; letter-spacing: -0.01em; min-height: 44px; }
+.topbar .brand img { width: 24px; height: 24px; border-radius: 7px; display: block; }
+.topbar nav { margin-left: auto; display: flex; align-items: center; gap: 22px; }
+.topbar nav a { color: var(--ink-soft); text-decoration: none; font-size: 0.86rem; font-weight: 600; display: inline-flex; align-items: center; min-height: 44px; transition: color var(--transition); }
+.topbar nav a:hover { color: var(--ink); }
+#all-apps { display: flex; align-items: center; }
+@media (max-width: 620px) { .topbar nav a.hide-sm { display: none; } }
+
+/* ---------- Page body ---------- */
+main { padding: 56px 0 24px; }
+h1 { font-size: clamp(2rem, 5vw, 2.6rem); letter-spacing: -0.02em; margin: 0 0 12px; }
+.lede { color: var(--ink-soft); font-size: 1.05rem; margin: 0 0 40px; max-width: 60ch; }
+h2 { font-size: 1.15rem; margin: 36px 0 10px; letter-spacing: -0.01em; }
+p, li { color: var(--ink-soft); max-width: 68ch; }
+strong { color: var(--ink); font-weight: 600; }
+ul { padding-left: 1.2rem; }
+li { margin-bottom: 8px; }
+
+/* ---------- Footer ---------- */
+footer { padding: 40px 0 72px; margin-top: 48px; border-top: 1px solid var(--line); }
+.footer-credit { font-size: 0.78rem; color: var(--ink-faint); }
+.footer-credit a { color: var(--ink-soft); font-weight: 600; text-decoration: none; }
+.subfoot { border-top: 1px solid var(--line); margin-top: 28px; padding-top: 20px; display: flex; flex-wrap: wrap; gap: 12px 32px; align-items: flex-end; justify-content: space-between; text-align: left; }
+.subfoot p { margin: 0; font-size: 0.78rem; line-height: 1.9; color: var(--ink-faint); flex: 0 1 auto; }
+.subfoot p a { color: var(--yellow); }
+.subfoot nav { display: flex; flex-wrap: wrap; gap: 18px; margin-left: auto; }
+.subfoot nav a { font-size: 0.78rem; color: var(--ink-soft); text-decoration: none; }
+.subfoot nav a:hover { color: var(--blue); }
+@media (max-width: 620px) { .subfoot nav { margin-left: 0; } }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; animation: none !important; } }

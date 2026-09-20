@@ -6,7 +6,7 @@
 
 A stupidly simple todo list.
 
-**Website:** [todom.lightmorphic.co.uk](https://todom.lightmorphic.co.uk)
+**Website:** [todom.lightmorphic.com](https://todom.lightmorphic.com)
 
 Todom is a small, dependency-free todo list. Every task has a due
 date, active tasks are sorted soonest-first, and completing a task
@@ -17,7 +17,7 @@ See [CHANGELOG.md](./CHANGELOG.md) for version history.
 ## Features
 
 - Clean, minimal interface
-- Dark/Light mode with system preference detection
+- Dark interface as standard
 - Every task has a due date; tasks are sorted nearest-due first
 - Colour-coded urgency (overdue / due today / due soon / later)
 - Completion date recorded automatically when you check a task off

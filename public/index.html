@@ -7,7 +7,7 @@
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" sizes="192x192" href="todom-logo-small.png">
 <link rel="apple-touch-icon" href="todom-logo-small.png">
-<meta name="theme-color" content="#2196F3">
+<meta name="theme-color" content="#111318">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -24,60 +24,21 @@
 
 /* =====================================================================
    Material Design 3 (Material You) token system.
-   Built on Todom's brand blue (#2196F3 = Material Blue 500). Light and
-   dark schemes use MD3 surface/tonal roles; urgency colors are kept
+   Built on Todom's brand blue (#2196F3 = Material Blue 500). The single
+   dark scheme uses MD3 surface/tonal roles; urgency colors are kept
    as the app's existing semantic values so the "sort by due date"
    signal reads exactly as before.
    ===================================================================== */
 :root {
+    color-scheme: dark;
+
     /* Primary */
-    --md-primary: #1976d2;
-    --md-on-primary: #ffffff;
-    --md-primary-container: #d4e3ff;
-    --md-on-primary-container: #001c3a;
-
-    /* Surfaces (tonal elevation) */
-    --md-background: #f8f9ff;
-    --md-surface: #f8f9ff;
-    --md-surface-container-low: #f1f3fb;
-    --md-surface-container: #eceef6;
-    --md-surface-container-high: #e6e8f0;
-    --md-surface-container-highest: #e0e2ea;
-    --md-on-surface: #1a1c1e;
-    --md-on-surface-variant: #43474e;
-    --md-outline: #74777f;
-    --md-outline-variant: #c4c6cf;
-
-    /* Inverse (snackbars) */
-    --md-inverse-surface: #2f3033;
-    --md-inverse-on-surface: #f1f0f4;
-
-    /* Error */
-    --md-error: #ba1a1a;
-    --md-on-error: #ffffff;
-
-    /* Urgency (unchanged semantics) */
-    --overdue: #dc2626;
-    --today: #ea580c;
-    --soon: #fbc02d;
-    --later: #6b7280;
-
-    /* Elevation (MD3 shadow ramps) */
-    --elev-1: 0 1px 2px rgba(0,0,0,.30), 0 1px 3px 1px rgba(0,0,0,.12);
-    --elev-2: 0 1px 2px rgba(0,0,0,.30), 0 2px 6px 2px rgba(0,0,0,.14);
-    --elev-3: 0 4px 8px 3px rgba(0,0,0,.14), 0 1px 3px rgba(0,0,0,.28);
-
-    --transition: .2s cubic-bezier(.2,0,0,1);
-    --shape-card: 12px;
-    --shape-field: 8px;
-}
-
-[data-theme="dark"] {
     --md-primary: #a4c8ff;
     --md-on-primary: #00315e;
     --md-primary-container: #1b477e;
     --md-on-primary-container: #d4e3ff;
 
+    /* Surfaces (tonal elevation) */
     --md-background: #111318;
     --md-surface: #111318;
     --md-surface-container-low: #191c20;
@@ -89,19 +50,29 @@
     --md-outline: #8e9199;
     --md-outline-variant: #43474e;
 
+    /* Inverse (snackbars) */
     --md-inverse-surface: #e2e2e6;
     --md-inverse-on-surface: #2f3033;
 
+    /* Error */
     --md-error: #ffb4ab;
     --md-on-error: #690005;
 
+    /* Urgency (unchanged semantics) */
+    --overdue: #dc2626;
+    --today: #ea580c;
+    --soon: #fbc02d;
     --later: #9ca3af;
 
+    /* Elevation (MD3 shadow ramps) */
     --elev-1: 0 1px 2px rgba(0,0,0,.50), 0 1px 3px 1px rgba(0,0,0,.30);
     --elev-2: 0 1px 2px rgba(0,0,0,.50), 0 2px 6px 2px rgba(0,0,0,.32);
     --elev-3: 0 4px 8px 3px rgba(0,0,0,.32), 0 1px 3px rgba(0,0,0,.50);
-}
 
+    --transition: .2s cubic-bezier(.2,0,0,1);
+    --shape-card: 12px;
+    --shape-field: 8px;
+}
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -191,8 +162,7 @@ input:focus {
     box-shadow: inset 0 0 0 1px var(--md-primary);
 }
 
-input[type="date"] { color-scheme: light; }
-[data-theme="dark"] input[type="date"] { color-scheme: dark; }
+input[type="date"] { color-scheme: dark; }
 
 #todoInput { flex: 1 1 220px; min-width: 160px; }
 #todoDate { flex: 0 0 auto; width: 170px; }
@@ -469,25 +439,6 @@ input[type="date"] { color-scheme: light; }
 .footer-link-btn:hover,
 .footer-links a:hover { background: color-mix(in srgb, var(--md-primary) 8%, transparent); }
 
-/* Theme toggle now lives inline in the footer next to Export. */
-.footer-icon-btn {
-    position: relative;
-    overflow: hidden;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    color: var(--md-on-surface-variant);
-    transition: background-color var(--transition);
-}
-.footer-icon-btn:hover { background: color-mix(in srgb, var(--md-on-surface) 8%, transparent); }
-.footer-icon-btn svg { width: 20px; height: 20px; fill: currentColor; }
 
 .footer-sep { display: none; }
 
@@ -596,7 +547,6 @@ input[type="date"] { color-scheme: light; }
             <div class="footer-links">
                 <button type="button" class="footer-link-btn md-ripple" id="importLink">Import</button>
                 <button type="button" class="footer-link-btn md-ripple" id="exportLink">Export</button>
-                <button type="button" id="themeToggle" class="footer-icon-btn md-ripple" aria-label="Toggle theme"></button>
             </div>
         </footer>
     </main>
@@ -620,41 +570,6 @@ let todos = [];
 let editingId = null;
 let confirmingDeleteId = null;
 const API = '/api/tasks';
-
-// ---------- Theme ----------
-const SUN_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0-5a1 1 0 011 1v2a1 1 0 11-2 0V3a1 1 0 011-1zm0 17a1 1 0 011 1v2a1 1 0 11-2 0v-2a1 1 0 011-1zM4.22 4.22a1 1 0 011.42 0l1.4 1.42a1 1 0 11-1.4 1.4L4.22 5.64a1 1 0 010-1.42zm12.74 12.74a1 1 0 011.42 0l1.4 1.42a1 1 0 01-1.4 1.4l-1.42-1.4a1 1 0 010-1.42zM2 12a1 1 0 011-1h2a1 1 0 110 2H3a1 1 0 01-1-1zm17 0a1 1 0 011-1h2a1 1 0 110 2h-2a1 1 0 01-1-1zM4.22 19.78a1 1 0 010-1.42l1.4-1.4a1 1 0 011.42 1.4l-1.42 1.42a1 1 0 01-1.4 0zm12.74-12.74a1 1 0 010-1.42l1.42-1.4a1 1 0 011.4 1.4l-1.4 1.42a1 1 0 01-1.42 0z"/></svg>';
-const MOON_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.74 2.02a1 1 0 01.26 1.06A7 7 0 0022.92 12a1 1 0 011.02 1.42A9 9 0 1111.48 1.66a1 1 0 011.26.36z"/></svg>';
-function updateThemeLabel() {
-    const current = document.documentElement.getAttribute('data-theme');
-    const link = document.getElementById('themeToggle');
-    if (!link) return;
-    // Show the icon for the theme you'd switch *to*: sun in dark mode, moon in light.
-    link.innerHTML = current === 'dark' ? SUN_ICON : MOON_ICON;
-    link.setAttribute('aria-label', current === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
-}
-
-function initTheme() {
-    let theme = 'light';
-    try {
-        const saved = localStorage.getItem('todom-theme');
-        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        theme = saved || (prefersDark ? 'dark' : 'light');
-    } catch (e) {
-        console.warn('Todom: theme storage unavailable, defaulting to light', e);
-    }
-    document.documentElement.setAttribute('data-theme', theme);
-}
-initTheme();
-
-document.getElementById('themeToggle').addEventListener('click', (e) => {
-    e.preventDefault();
-    const current = document.documentElement.getAttribute('data-theme');
-    const next = current === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', next);
-    try { localStorage.setItem('todom-theme', next); } catch (e) { /* non-fatal */ }
-    updateThemeLabel();
-});
-updateThemeLabel();
 
 // ---------- Toast ----------
 function showToast(message, type = 'success') {

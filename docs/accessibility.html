@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accessibility — Todom</title>
+<meta name="description" content="How accessible the Todom website and app are, what we have checked, and how to tell us about a barrier.">
+<link rel="canonical" href="https://todom.lightmorphic.com/accessibility.html">
+<link rel="icon" type="image/png" href="todom-logo-small.png">
+<link rel="stylesheet" href="legal.css">
+<script src="https://apps.lightmorphic.com/launcher.js" defer></script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="todom-logo-small.png" alt="" width="24" height="24">Todom</a>
+    <nav aria-label="Main">
+      <a class="hide-sm" href="index.html#why">Why</a>
+      <a class="hide-sm" href="index.html#features">Features</a>
+      <a href="index.html#get-started">Get started</a>
+      <a href="https://github.com/lightmorphic/todom" target="_blank" rel="noopener">GitHub</a>
+      <div id="all-apps"></div>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+    <h1>Accessibility</h1>
+    <p class="lede">We aim to meet WCAG 2.1 level AA on this site and in the app. Here is where that stands.</p>
+    <h2>What we have done</h2>
+    <ul>
+      <li>Every page works from the keyboard alone, in a sensible order, with a visible focus ring and a skip link to the content.</li>
+      <li>Text and controls are checked for contrast against the dark background at level AA.</li>
+      <li>Headings, landmarks and labels are marked up properly, so a screen reader can navigate the page rather than read it as one block.</li>
+      <li>Buttons and links are at least 44 by 44 pixels, so they can be hit without precision.</li>
+      <li>Pages reflow to a phone screen without horizontal scrolling, and stay usable when text is enlarged to 200%.</li>
+      <li>Motion is decorative only, and stops entirely if your system asks for reduced motion.</li>
+      <li>Nothing depends on colour alone. Due dates are shown as words as well as colour.</li>
+    </ul>
+
+    <h2>One dark interface</h2>
+    <p>Todom is dark, and there is no light version. If a dark screen is a barrier for you rather than a comfort, your browser or operating system's own contrast and colour settings will override ours, and we would like to hear about it.</p>
+
+    <h2>Where it may fall short</h2>
+    <p>This is a small project tested by hand, not by an external auditor. The live demo on the home page is an interactive area that may be awkward with some assistive technology; everything it demonstrates is described in words nearby, so nothing is only available inside it.</p>
+
+    <h2>Tell us</h2>
+    <p>If something here stops you using Todom, write to <a href="mailto:complaints@lightmorphic.com">complaints@lightmorphic.com</a>. Say which page and what happened, and you will get a reply within a week. We treat accessibility problems as bugs and fix them like bugs.</p>
+    <p>This statement was prepared on 20 September 2026 and applies to todom.lightmorphic.com and the Todom app.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="footer-credit"><a href="https://github.com/lightmorphic/todom" target="_blank" rel="noopener">Todom</a> — a <a href="https://lightmorphic.com" target="_blank" rel="noopener">Lightmorphic</a> project.</p>
+    <div class="subfoot">
+      <p>&copy; Lightmorphic Ltd. Registered in England and Wales, company number
+        <a href="https://find-and-update.company-information.service.gov.uk/company/17423646">17423646</a>.<br>
+        Registered office: 82A James Carter Road, Mildenhall, IP28 7DE.<br>
+        <!-- Update this date when the page's content changes. -->
+        Page last updated: <time datetime="2026-09-20">20 September 2026</time>.</p>
+      <nav aria-label="Legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="terms.html">Terms</a>
+        <a href="accessibility.html">Accessibility</a>
+        <a href="complaints.html">Complaints</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

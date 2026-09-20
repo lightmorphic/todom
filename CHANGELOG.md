@@ -2,6 +2,21 @@
 
 All notable changes to Todom are documented in this file.
 
+## 1.2.0 - 2026-09-20
+
+### Changed
+- Todom is now dark only. The light theme and the theme switcher have
+  been removed, along with the stored `todom-theme` preference (offline
+  cache bumped to `todom-cache-v3`).
+- Website address moved to todom.lightmorphic.com, which is the domain
+  that actually points at GitHub Pages.
+
+### Added
+- Sticky top menu on the website, with the Lightmorphic app launcher as
+  the last item on the right.
+- Legal pages (privacy, cookies, terms, accessibility, complaints) and a
+  legal sub-footer on the website.
+
 ## 1.1.0 - 2026-08-18
 
 ### Changed
@@ -15,7 +30,7 @@ All notable changes to Todom are documented in this file.
   keep whatever mapping they already use.
 
 ### Added
-- Product website at [todom.lightmorphic.co.uk](https://todom.lightmorphic.co.uk),
+- Product website at [todom.lightmorphic.com](https://todom.lightmorphic.com),
   with a live interactive demo of the interface.
 
 ## 1.0.0 - 2026-08-18
